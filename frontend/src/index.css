@@ -1,0 +1,52 @@
+/* google font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css');
+
+
+/* layout */
+/*{
+  border: solid red 1px;
+}*/
+
+:root {
+  --primary: #1aac83;
+  --error: #e7195a;
+  --color-primary: #C6EBC5;
+}
+.dark-mode {
+  --primary: #1aac83;
+  --error: #e7195a;
+  --color-primary: #4E6C50; /* Light mode background color */
+}
+.light-mode {
+  --primary: #1aac83;
+  --error: #e7195a;
+  --color-primary: #C6EBC5; /* Light mode background color */
+}
+
+html, body, #root, .App {
+  height: 100%;
+  width: 100%;
+  background-color: var(--color-primary);
+  position: fixed;
+  font-family: "Poppins";
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;  /* Prevent horizontal scrolling */
+}
+
+::-webkit-scrollbar {
+  background-color: transparent;
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 8px;
+}
+

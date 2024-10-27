@@ -1,0 +1,780 @@
+
+.pantry-container{
+    margin: 0 auto;
+    /* padding: 30px 0px; */
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+    /* height: calc(100% - 100px); */
+
+}
+
+.pantry-title { /* Style for the "My Pantry" text */
+    margin-bottom: 10px;
+    margin-top: 0; /* Remove top margin */
+    font-size: 24px;       /* You can adjust this as per your preference */
+    font-weight: bold;     /* Making the text bold */
+    text-align: center;    /* Centering the text */
+}
+
+.pantry-left-container .search-input {
+    width: 70%;
+    box-shadow: 0px 8px 4px 0px rgba(0, 0, 0, 0.25);
+    border-color: black;
+}
+.pantry-right-container .recipe-input {
+    width: 70%;
+    box-shadow: 0px 8px 4px 0px rgba(0, 0, 0, 0.25);
+    border-color: black;
+}
+.pantry-left-container{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    background-color: #FBF2CF;
+    width: 30vw;
+    height: 650px;
+    border-radius: 0 25px 25px 0;
+    box-shadow: 0px 8px 4px 0px rgba(0, 0, 0, 0.25);
+    overflow-y: auto;
+    align-items: center;
+    justify-content: flex-start; /* Align items to the top */
+    padding-top: 1%;
+    padding: 20px 10px; /* Reduced side padding */
+    overflow-x: hidden; /* Ensure no horizontal scrolling */
+}
+
+img {
+    margin: auto;
+    height: 200px; 
+    width: 200px;
+}
+.pantry-center-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    width: 30vw;
+    padding-left: 1px;
+    padding-right: 1px;
+    margin: auto;
+}
+
+.pantry-right-container{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    background-color: #FBF2CF;
+    justify-content: start;
+    width: 30vw;
+    height: 650px;
+    padding-top: 1%;
+    padding: 20px 10px;
+    border-radius: 25px 0 0 25px;
+    box-shadow: 0px 8px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+/* Add this to your CSS file (e.g., pantry.css) */
+
+.dropdown-container {
+    position: absolute;
+    top: 100%; /* Position it just below the "Filter" button */
+    left: 0;
+    background-color: white; /* Background color for the dropdown */
+    border: 1px solid #ccc; /* Border for the dropdown */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional box shadow */
+    z-index: 1000; /* Ensure it's above everything else */
+    display: none; /* Initially hide the dropdown */
+  }
+  
+  /* Show the dropdown when the state isDropdownVisible is true */
+  .show-dropdown {
+    display: block;
+  }
+  
+#toggleDropdown { /*filter button*/
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  position: flex;
+  border-radius: .5vw;	
+}
+
+#toggleDropdown:hover{
+    background-color: #3e8e41;
+}
+
+#filterDropdown{ /*actual filter*/
+    background-color: white;
+    z-index: 1;	
+    padding: 2vw;	
+    width: auto;	
+    border-radius: 3vw;
+}
+
+/* Style the dropdown content (hidden by default) */
+.dropdown-content {
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: .5;
+  transition: max-height 61s;
+  position: absolute;
+  top: 28.5%;
+  right: 0%;
+  width: 20%;
+}
+.checkbox-label {	/* Style the dropdown links */
+    display: flex;
+    align-items: center;	 
+  }	 
+
+  .checkbox-label label {	
+    margin-left: 25px; /* Adjust the label spacing as needed */	
+  }	
+
+  .checkbox-label label:hover {	
+    color: green;	
+  }	
+
+
+  .filter-section label{
+    display: flex;	
+  }	
+
+
+
+  .filter-section button{	/* Change color on hover */
+    background-color: #FA7070;	.dropdown-content a:hover {
+    border: none;	  background-color: #ddd;
+    color: black;	}
+    text-align: center;	
+    text-decoration: none;	
+    display: inline-block;	
+    border-radius: 80px;	
+    box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.25);	
+    font-size: medium;	
+  }
+
+.recipe-title {
+    margin-bottom: 10px;
+    margin-top: 0; /* Remove top margin */
+    font-size: 24px;       /* You can adjust this as per your preference */
+    font-weight: bold;     /* Making the text bold */
+    text-align: center; 
+    padding-right: 1vw;
+}
+.pantry-button {
+    background-color: #FA7070;
+    border: none;
+    color: black;
+    /* margin-bottom: 20%; */
+    /* margin-top: 20%; */
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 200%;
+    border-radius: 80px;
+    width: 50%;
+    height: 5vw;
+    box-shadow: 0px 8px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.pantry-button:hover {
+    cursor: pointer;
+    background-color: #3e8e41;
+    color: white;
+    position: relative;
+    top: -5px;
+}
+
+.recipe-search-panel{
+    display: flex;
+    flex-direction: row;
+}
+
+.magnifying-glass{
+    position: relative;
+    z-index:1;
+    border-radius: 20%;
+    height:50%;
+    top:15%;
+    left:6%;
+}
+
+.ingredients-grid {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 95%; /* Set to full width */
+    overflow-y: auto; /* Allow vertical scrolling for the entire list */
+    max-height: 550px;
+    min-height: 100px;
+    padding-top: 10px;
+    padding-left: 0; /* Remove left padding */
+    padding-right: 0; /* Remove right padding */
+}
+
+.recipes-grid p {
+    align-self: center;
+}
+
+.recipes-grid {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto; /* Allow vertical scrolling for the entire list */
+    max-height: 550px;
+    min-height: 100px;
+    padding-top: 10px;
+    padding-left: 0; /* Remove left padding */
+    padding-right: 0; /* Remove right padding */
+}
+
+.ingredients-grid p {
+    align-self: center;
+}
+
+.ingredient-name:hover {
+    top: -5px;
+    position: relative;
+    color: black;
+    font-weight: bold;
+}
+ .ingredient-bubble:hover { 
+    cursor: pointer;
+    background-color: transparent;
+    top: -2px;
+    font-weight: bold;
+} 
+
+.pantry-tag {
+    display: none;
+    position: absolute;
+    top: 125px;  /* Adjust based on your preference and navbar height */
+    left: 10px; /* Adjust as needed */
+    padding: 10px 20px;  /* Adds some padding around the text */
+    background-color: #FBF2CF;  /* Example background color */
+    color: black;  /* Text color */
+    border-radius: 20px;  /* Rounded corners */
+    cursor: pointer;  /* Indicates it's clickable */
+    font-weight: bold;  /* Makes the text bold */
+    box-shadow: 0px 8px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+
+.ingredient-bubble {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    width: calc(100% - 10px); /* Adjust width considering padding */
+    padding: 10px 5px;
+    text-align: left;
+    box-shadow: none;
+    height: 40px;
+    line-height: 40px;
+    box-sizing: border-box; /* Include padding in width calculation */
+    /* Remove any overflow properties */
+}
+
+.delete-button {
+    background-color: #FA7070;
+    border: none;
+    border-radius: 15px;
+    padding: 5px 10px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.pantry-right-button-containter {
+    display: flex;
+    justify-content: space-between;
+}
+.pantry-save-button {
+    background-color: #A1C298;
+    border: none;
+    border-radius: 15px;
+    padding: 5px 10px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.pantry-save-button:hover {
+    background-color: #4CAF50;
+    font-weight: bold;
+}
+
+.pantry-tag {
+    display: block;
+    justify-content: space-between;
+    position: absolute;
+    top: 150px;
+    left: 10px;
+    z-index: 1000; 
+    width: auto;
+    height: auto;
+}
+
+.delete-button:hover {
+    background-color: #FF3D3D;
+    font-weight: bold;
+}
+
+.search-input {
+    left:50%;
+    width: 90%; /* Adjust as needed */
+    padding: 2%;
+    margin-bottom: 5%;
+    margin-top:2%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+.recipe-input {
+    position: relative;
+    left:15%;
+    width: 90%; /* Adjust as needed */
+    padding: 2%;
+    margin-bottom: 5%;
+    margin-top:2%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+.pantry-toggle-button,
+.recipes-toggle-button {
+    display: none;
+    position: absolute;
+    top: 125px;  
+    left: 10px; 
+    padding: 10px 20px;  
+    background-color: #FBF2CF;  
+    color: black;  
+    border-radius: 20px;  
+    cursor: pointer;  
+    font-weight: bold;  
+    box-shadow: 0px 8px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.close-panel-button {
+    display: none;
+    position: absolute;
+    top: 10px; /* Adjust as needed */
+    right: 10px; /* Adjust as needed */
+    /* Add other styles (background, color, etc.) as desired */
+}
+
+.recipe-success{
+    background-color: red;
+    height: 200px;
+    width: 200px;
+}
+
+.mixing-bowl-static{
+    width:100%;
+    height:100%;
+}
+
+.mixing-bowl-gif{
+    width:100%;
+    height:100%;
+}
+
+@media (max-width: 768px) {
+    .mixing-bowl-static{
+        width:100%;
+        height:100%;
+    }
+    
+    .mixing-bowl-gif{
+        width:100%;
+        height:100%;
+    }
+
+    .pantry-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: calc(100% - 100px);
+    }
+    .pantry-left-container,
+    .pantry-right-container {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 99;
+        overflow-y: auto; /* In case the content is longer than the screen */
+    }
+
+    .pantry-left-container {
+        transform: translateX(-100%); /* Starts off the screen to the left */
+    }
+
+    .pantry-right-container {
+        transform: translateX(100%); /* Starts off the screen to the right */
+    }
+
+    /* Styles when panels are open */
+    .pantry-left-container.slide-in,
+    .pantry-right-container.slide-in {
+        transform: translateX(0); /* Comes in from the left or right */
+    }
+
+    .pantry-center-container img{
+        height: 100%;
+        width: 100%;
+    }
+
+    .pantry-toggle-button {
+        display: block;
+        justify-content: space-between;
+        position: absolute; 
+        top: 150px;
+        left: 10px;
+        z-index: 1000; 
+        width: auto;
+        height: auto;
+    }
+    .recipes-toggle-button {
+        display: block;
+        justify-content: space-between;
+        position: absolute;
+        top: 150px;
+        right: 10px;
+        /* z-index: 1000; */
+        width: auto; 
+        height: auto; 
+        left: auto; 
+    }
+
+    .pantry-center-container{
+
+        width:100%
+    }
+
+    .mixing-bowl-static{
+        position: relative;
+        height: 100%;
+        width: 50%;
+    }
+    .pantry-button{
+        height: 100px;
+        width: 90%;
+    }
+}
+
+/* Close button styles */
+.close-panel-button {
+    display: none; /* Hidden by default, visible on smaller screens */
+    position: absolute;
+    top: 2%; /* Adjust as needed */
+    right: 10%; /* Adjust as needed */
+    background-color: transparent;
+    font-weight: bold;
+    font-size: large;
+    width: 1%;
+    height: 1%;
+    border: transparent;
+    color: #FF3D3D;
+    /* Add other styles (background, color, etc.) as desired */
+}
+
+.recipe-top-panel{
+    display:flex;
+    justify-content: space-around;
+}
+
+.recipe-bubble {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    width: calc(100% - 10px); /* Adjust width considering padding */
+    padding: 10px 5px;
+    text-align: left;
+    box-shadow: none;
+    height: 40px;
+    line-height: 40px;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left:10px;
+}
+
+.recipes-toggle-button:hover {
+    top: -5px;
+    position: relative;
+    color: black;
+    font-weight: bold;
+}
+ .recipe-bubble:hover { 
+    cursor: pointer;
+    background-color: transparent;
+    top: -2px;
+    font-weight: bold;
+} 
+
+.ingredient-link {
+    text-decoration: none;
+    color: red;
+}
+
+.ingredient-link:hover {
+    text-decoration: underline;
+}
+
+.view-more-button {
+    background-color: transparent; /* No background */
+    border: none; /* No border */
+    transition: color 0.2s ease-in-out, text-shadow 0.2s ease-in-out; /* Smooth transition for color and text-shadow changes */
+    font-size: 1rem;
+    color: #000;
+    text-decoration: underline;
+}
+
+/* Hover effect */
+.view-more-button:hover {
+    color: #8f8969; /* Slightly different color on hover */
+    cursor: pointer;
+}
+
+/* Active (click) effect */
+.view-more-button:active {
+    color: #6e6950; /* Color when text is actively clicked */
+}
+
+/* Styling for the Save and Delete buttons */
+.save-delete-buttons {
+    display: flex; /* To position buttons side by side */
+    gap: 10px; /* Spacing between Save and Delete buttons */
+}
+
+.bottom-section {
+    display: flex;
+    justify-content: space-between; /* This will push "View More" to the left and buttons to the right */
+    width: 100%; /* Take up full width of parent */
+    align-items: center; /* Vertically align items in the center */
+}
+
+
+.expanded-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 90%;
+    padding: 20px;
+    background-color: #d8d3b9;
+    border-radius: 8px;
+    overflow: hidden;
+    flex-direction: column;
+    align-items: center;
+}
+
+@keyframes slideDown {
+    0% {
+        max-height: 0;
+    }
+    100% {
+        max-height: 100%; /* Adjust as needed */
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        max-height: 100%; /* Adjust as needed */
+    }
+    100% {
+        max-height: 0;
+    }
+}
+
+.expanded-content.expanding {
+    animation: slideDown 0.3s forwards;
+}
+
+.expanded-content.collapsing {
+    animation: slideUp 0.3s forwards;
+}
+
+
+.recipe-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px; /* Add some space between the image and the text */
+    border-radius: 8px;
+}
+
+input[type="checkbox"] {
+    /* Add if not using autoprefixer */
+    -webkit-appearance: none;
+    /* Remove most all native input styles */
+    appearance: none;
+    /* For iOS < 15 */
+    background-color: var(--form-background);
+    /* Not removed via appearance */
+    margin: 0;
+  
+    font: inherit;
+    color: currentColor;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid currentColor;
+    border-radius: 0.15em;
+    transform: translateY(-0.075em);
+  
+    display: grid;
+    place-content: center;
+  }
+  
+  input[type="checkbox"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    transform: scale(0);
+    transform-origin: bottom left;
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--form-control-color);
+    /* Windows High Contrast Mode */
+    background-color: CanvasText;
+  }
+  
+  input[type="checkbox"]:checked::before {
+    transform: scale(1);
+  }
+  
+  input[type="checkbox"]:focus {
+    outline: max(2px, 0.15em) solid currentColor;
+    outline-offset: max(2px, 0.15em);
+  }
+
+  .select-all-btn{
+    position: relative;
+    margin-top:20%;
+  }
+
+  .select-all-btn button {
+    position: relative;
+    
+  }
+
+@media (min-width: 769px) {
+    .pantry-tag {
+        display: none !important;
+    }
+    .recipe-tag {
+        display: none !important;
+    }
+}
+
+.drag-checkbox-wrapper {
+    display: flex;
+    align-items: center;  /* Vertically align items in the center */
+}
+
+.drag-handle {
+    padding-right: 10px;
+    padding-left: 3px;
+}
+
+.dropzone {
+    width: 90%;
+    height: 20%;
+    background-color: rgba(238, 102, 102, 0.7); /* Slight transparency */
+    padding: 10px;
+    text-align: center;
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropzone:hover {
+    background-color: rgba(229, 39, 39, 0.7); /* Slight transparency */
+}
+
+.button-17 {
+    padding-left: 30px;
+    padding-right: 30px;
+    align-items: center;
+    appearance: none;
+    
+    border-radius: 24px;
+    border-style: none;
+    box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+    box-sizing: border-box;
+    color: #3c4043;
+    cursor: pointer;
+    display: inline-flex;
+    fill: currentcolor;
+    font-family: "Google Sans",Roboto,Arial,sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    height: 48px;
+    justify-content: center;
+    letter-spacing: .25px;
+    line-height: normal;
+    max-width: 100%;
+    overflow: visible;
+    padding: 2px 24px;
+    position: relative;
+    text-align: center;
+    text-transform: none;
+    transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: auto;
+    will-change: transform,opacity;
+    z-index: 0;
+    }
+    
+    .lg-logout:hover {
+    background: #bc5050;
+    color: #ffffff;
+    }
+    
+    .button-17:active {
+    box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);
+    outline: none;
+    }
+    
+    .button-17:focus {
+    outline: none;
+    border: 2px solid #4285f4;
+    }
+    
+    .button-17:not(:disabled) {
+    box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+    }
+    
+    .button-17:not(:disabled):hover {
+    box-shadow: rgba(60, 64, 67, .3) 0 2px 3px 0, rgba(60, 64, 67, .15) 0 6px 10px 4px;
+    }
+    
+    .button-17:not(:disabled):focus {
+    box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+    }
+    
+    .button-17:not(:disabled):active {
+    box-shadow: rgba(60, 64, 67, .3) 0 4px 4px 0, rgba(60, 64, 67, .15) 0 8px 12px 6px;
+    }
+    
+    .button-17:disabled {
+    box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+    }
+    

@@ -1,0 +1,446 @@
+
+
+/* * {
+    border: red 1px solid
+} */
+
+/* .community-container {
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border:1px solid red;
+} */
+
+.community-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch; 
+  height: calc(100vh - 100px - 6%);
+  width: 100%;
+  /* margin-top: -8px;
+  margin-bottom: -8px; */
+}
+
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Adjust minmax values based on your preference */
+  gap: 10px;
+ /* padding: 10px; */
+  max-height: 30%;
+  overflow-y: scroll;
+  padding-right: 10%;
+  padding-left: 10%;
+  text-align:center;
+  justify-content: flex-start;
+}
+
+.category-item {
+  background-color: #FBF2CF;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  padding: 5px 10px; /* Reduce padding */
+  font-size: .96rem; /* Reduce font size */
+/* Adjust margin for spacing */
+  display: inline-block; /* Ensure it flows with text wrapping */
+}
+
+.category-title{
+  display: flex;
+  align-items: center;
+  align-self: flex-start;
+  margin: 0; /* Removes default margins */
+  padding: 0;
+}
+
+.category-item:hover {
+  background-color: #A1C298;
+  transform: scale(1.05) rotate(-1deg);
+}
+
+.category-item.active {
+  background-color: #A1C298;
+}
+
+.left-panel{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1%;
+    padding-bottom: 0.5%;
+    width: 250px;
+    min-height: 100px;
+    border-right: 1px solid #A1C298;
+    height: 100%;
+}
+
+.left-panel center {
+  width: 100%;
+}
+
+.posted-title{
+    display: flex;
+    align-items: center;
+    align-self: flex-start;
+}
+
+.posted-title h4{
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+/* .create-post-btn {
+    background-color: #f07474;
+    border-radius: 50%;
+    width:50%;
+    min-width:130px;
+    min-height: 130px;
+    height:20%;
+    position: relative;
+    top:60%;
+    margin:5%;
+    right:20%;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+      0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+} */
+
+.create-post-btn i {
+    font-size: 150%;
+}
+
+.divide-line {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  border-bottom: 1px solid #A1C298;
+  width: 112%;
+  height: 30px;
+  margin-left: -1%;
+  margin-right: -1%;
+}
+
+
+/* .center-panel{
+    background-color: rgb(238, 235, 235);
+    border-radius: 50px;
+    width: 50%;
+    min-height:600px;
+    max-height: 1%;
+    border:1px red solid;
+    padding: 5%;
+    align-selftsel: center;
+    margin-right:10%;
+    position: relative;
+    bottom:100%;
+    overflow: auto;
+} */
+
+.center-panel {
+  /* border: 1px solid red; */
+  width: 30%;
+  max-height: 100%;
+  /* min-height: 100%; */
+  margin: 1%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.center-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 60%;
+  margin-left: 20%;
+}
+.community-button {
+  background-color: #A1C298;
+  border: none;
+  border-radius: 15px;
+  padding: 5px 10px;
+  font-size: 12px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+.community-button:hover {
+  background-color: #4CAF50;
+    font-weight: bold;
+}
+
+.c-post-grid {
+  max-height:75%; /* Set the maximum height you desire */
+  overflow-y: auto; /* Add vertical scroll if content exceeds the container height */
+  /* border: 1px solid #ccc; Optional: Add a border for better styling */
+  padding-right: 10%; /* Optional: Add padding for spacing */
+  padding-left: 10%; /* Optional: Add padding for spacing */
+  padding-top: 3%;
+  text-align:center;
+  min-height: 250px;
+  justify-content: flex-start;
+  gap: 10px;
+  position: relative;
+  top:5%;
+}
+
+.post-list {
+  list-style-type: none; /* This removes the bullet points */
+  padding-left: 0;      /* This removes the indentation/padding */
+  /* margin: 0; */
+}
+
+
+
+.post-item {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  background-color: #FBF2CF;
+  border-radius: 5px;
+  cursor: pointer;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+.subtitle {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.author {
+  align-self: flex-start;
+  align-items: flex-start;
+  margin-left: 3%;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+  padding: 0;
+}
+.time {
+  align-self: flex-start;
+  align-items: flex-start;
+  margin-bottom: 5px;
+  margin-right: 3%;
+  font-size: 0.9rem;
+  padding: 0;
+}
+
+.right-panel {
+  background-color: #FBF2CF;
+  /* border-radius: 50px; */
+  flex: 1;
+  padding: 2% 4% 2% 4%;
+  position: relative;
+  max-height: 100%; /* Adjust as needed */
+  overflow-y: scroll;
+  min-height: 100%;
+}
+
+.scroll-wrapper {
+  width: 50%;
+  margin-top: 1%;
+  margin-right: 1%;
+  border-radius: 30px;
+  overflow: hidden;
+  /* border: 1px solid red; */
+}
+
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.recipe-grid {
+    max-height: 30%; /* Set the maximum height you desire */
+    overflow-y: auto; /* Add vertical scroll if content exceeds the container height */
+    /* border: 1px solid #ccc; Optional: Add a border for better styling */
+    padding-right: 10%; /* Optional: Add padding for spacing */
+    padding-left: 10%; /* Optional: Add padding for spacing */
+    /* padding-top: 3%; */
+    text-align:center;
+    min-height: 250px;
+    justify-content: flex-start;
+  }
+
+  .recipe-item{
+    padding: 10%;
+    background-color: rgb(255, 253, 161);
+    border-radius:10%;
+    margin-bottom: 10%;
+  }
+
+
+/* CSS */
+.button-33 {
+  background-color: #FBF2CF;
+  border-radius: 100px;
+  box-shadow: rgba(251, 242, 207, .35) 0 -25px 18px -14px inset,
+  rgba(251, 242, 207, .25) 0 1px 2px,
+  rgba(251, 242, 207, .25) 0 2px 4px,
+  rgba(251, 242, 207, .25) 0 4px 8px,
+  rgba(251, 242, 207, .25) 0 8px 16px,
+  rgba(251, 242, 207, .25) 0 16px 32px;
+  color: black;
+  cursor: pointer;
+  display: inline-block;
+  font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-33:hover {
+  box-shadow: rgba(251, 242, 207, .5) 0 -25px 18px -14px inset,
+              rgba(251, 242, 207, .4) 0 1px 2px,
+              rgba(251, 242, 207, .4) 0 2px 4px,
+              rgba(251, 242, 207, .4) 0 4px 8px,
+              rgba(251, 242, 207, .4) 0 8px 16px,
+              rgba(251, 242, 207, .4) 0 16px 32px;
+  transform: scale(1.05) rotate(-1deg);
+}
+
+.recipe-list {
+  list-style-type: none; /* This removes the bullet points */
+  padding-left: 0;      /* This removes the indentation/padding */
+}
+
+
+/* CSS */
+.button-44 {
+  background: #FA7070;
+  border-radius: 11px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  font-family: Mija,-apple-system,BlinkMacSystemFont,Roboto,"Roboto Slab","Droid Serif","Segoe UI",system-ui,Arial,sans-serif;
+  font-size: 1.15em;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 33.4929px;
+  padding: .8em 1em;
+  text-align: center;
+  text-decoration: none;
+  text-decoration-skip-ink: auto;
+  text-shadow: rgba(0, 0, 0, .3) 1px 1px 1px;
+  text-underline-offset: 1px;
+  transition: all .2s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 100%;
+  word-break: break-word;
+  border: 0;
+  align-self: flex-start;
+}
+
+.button-44:active,
+.button-44:focus {
+  border-bottom-style: none;
+  border-color: #dadada;
+  box-shadow: rgba(0, 0, 0, .3) 0 3px 3px inset;
+  outline: 0;
+}
+
+.button-44:hover {
+  background-color: #e53935;
+}
+
+.search-input-container {
+  z-index: 20;
+  position: relative;
+  width: 90%;
+  margin: 1%;
+}
+
+.search-suggestions-container {
+  z-index: 20;
+  position: absolute;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* border: 1px solid #ddd; */
+  border-top: none;
+  background-color: white;
+  z-index: 1000;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.search-suggestions-dropdown {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.search-suggestions-dropdown li {
+  list-style: none;
+  padding: 8px 16px;
+  margin: 0;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+
+.search-suggestions-dropdown li:last-child {
+  border-bottom: none;
+}
+
+.search-suggestions-dropdown li:hover {
+  background-color: #f9f9f9;
+}
+
+.search-suggestions-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.search-suggestions-container::-webkit-scrollbar-thumb {
+  background: #ccc;
+}
+
+.divider {
+  text-align: center;
+  padding: 8px;
+  color: #ccc;
+}
+
+
+.lowest-button{
+  position: relative;
+  padding-top: 5%;
+  /* right: 20%; */
+}
+
+.high-low-div{
+  display: flex;
+  flex-direction: column;
+  background-color: #4CAF50;
+  width:10px;
+  padding:3%;
+  position: relative;
+  bottom:100px;
+  border-radius: 6%;
+  height:10%;
+}
+
+.comment-rating-button{
+  z-index: 1;
+  position: relative;
+  top:1px;
+}
