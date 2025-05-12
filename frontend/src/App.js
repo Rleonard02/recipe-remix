@@ -33,24 +33,24 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        {isLoggedIn && <Navbar />}
+        {<Navbar />}
         <Routes>
-          <Route path="/" element={isLoggedIn ? <Home /> : <Landing />} />
-          <Route path="/pantry" element={isLoggedIn ? <Pantry /> : <Navigate to="/" />} />
-          <Route path="/recipes" element={isLoggedIn ? <Recipes /> : <Navigate to="/" />} />
-          <Route path="/community" element={isLoggedIn ? <Community /> : <Navigate to="/" />} />
-          <Route path="/community/:postId" element={isLoggedIn ? <Community /> : <Navigate to="/" />} />
-          <Route path="/profile" element={isLoggedIn ? <Profile /> : <Navigate to="/" />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/pantry" element={<Pantry></Pantry>} />
+          <Route path="/recipes" element={<Recipes />} />
+          <Route path="/community" element={<Community />} />
+          <Route path="/community/:postId" element={<Community />} />
+          <Route path="/profile" element={<Profile />} />
 
-          <Route path="/profile/:userId" element={isLoggedIn ? <Profile /> : <Navigate to="/" />} />
+          <Route path="/profile/:userId" element={<Profile /> } />
 
-          <Route path="/messages" element={isLoggedIn ? <Messages /> : <Navigate to="/" />} />
-          <Route path="/messages/:conversationId" element={isLoggedIn ? <Messages /> : <Navigate to="/" />} />
-          <Route path="/settings" element={isLoggedIn ? <Settings /> : <Navigate to="/" />} />
-          <Route path="/preferences" element={isLoggedIn ? <Preferences /> : <Navigate to="/" />} />
-          <Route path="/shoppingList" element={isLoggedIn ? <ShoppingList /> : <Navigate to="/" />} />
-          <Route path="/login" element={isLoggedIn ? <Navigate to="/" /> : <Login />} />
-          <Route path="/register" element={isLoggedIn ? <Navigate to="/" /> : <Register />} />
+          <Route path="/messages" element={<Messages />} />
+          <Route path="/messages/:conversationId" element={<Messages />} />
+          <Route path="/settings" element={<Settings />} />
+          <Route path="/preferences" element={<Preferences />} />
+          <Route path="/shoppingList" element={<ShoppingList />} />
+          <Route path="/login" element={ <Login />} />
+          <Route path="/register" element={<Register />} />
           <Route path="/forgot-password" element={isLoggedIn ? <Navigate to="/" /> : <ForgotPassword />} />
           <Route path="/resetPassword/:token" element={isLoggedIn ? <Navigate to="/" /> : <ResetPasswordPage />} />
           <Route path="/confirm-email/:token" element={isLoggedIn ? <Navigate to="/" /> : <EmailConfirmation />} />

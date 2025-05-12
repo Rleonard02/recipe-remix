@@ -4,7 +4,6 @@ import "./editProfile.css";
 import { TextField } from '@mui/material';
 //components
 import UploadProfile from "./UploadProfile"
-import uploadImageToS3 from "../UploadImagetoS3/UploadImagetoS3";
 
 function EditProfile({closeModal, applyChanges, profileData}) {
   const [editModal, setEditModal] = useState(false);
